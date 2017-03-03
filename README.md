@@ -7,7 +7,7 @@ For Full Sail's Deployment of Web Applications -March 2017
 
 The last url-shortener you'll ever use!
 
-## Installing Wrds.io
+## Installing Short.io
 
 Step 1. Make Sure you have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com) installed.
 
@@ -15,7 +15,7 @@ Step 2. Download or Clone this Repo.
 
 Step 3. Inside the repo's main directory, use your CLI to type `npm install` to install all the node packages into the node_modules directory.
 
-Step 4. Finally, run `node ./src/server.js` to run **wrds.io**
+Step 4. Finally, run `node ./src/server.js` to run **short.io**
 
 ## Routes
 
@@ -23,4 +23,4 @@ Step 4. Finally, run `node ./src/server.js` to run **wrds.io**
 
 Using Postman or alternative:
 
-post to `/api/v1/url` => Returns a shortened url like wrds.io/AppleMonkey
+post to `/api/v1/url` => Returns a shortened url like short.io/AppleMonkey
