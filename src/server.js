@@ -1,7 +1,6 @@
 // Require Express
 const express = require('express');
 const bodyParser = require('body-parser')
-const randomstring = require('randomstring')
 
 // Create an app using Express
 const app = express();
@@ -18,11 +17,8 @@ const server = app.listen(port, function() {
 	  console.log('The Server is running on port ' + port, "success");
 });
 
-// Post 
-app.post('/api/v1/urls', (req, res) => {
-	
-	url_short = randomstring.generate(6);
+// Get The Api Routes from specified folder 
+app.use('/api', require('../routes/api.js')(express));
 
-    res.status(200).json(url_short);
-
-});
+// Export Module
+module.exports = server;
