@@ -6,8 +6,10 @@ module.exports = function(express) {
     // Post 
     router.post('/v1/urls', (req, res) => {
         
+        // Create an Alphanumeric String
         url_short = randomstring.generate(6);
 
+        // Return The String
         res.status(200).json(url_short);
 
     });
