@@ -7,7 +7,7 @@ For Full Sail's Deployment of Web Applications -Jan 2017
 
 Unlike TinyURL which gives you a totally forgettable set of characters, `short.io` returns back a two-combination series of words.
 
-## Installing Wrds.io
+## Installing short.io
 
 Step 1. Make Sure you have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com) installed.
 
