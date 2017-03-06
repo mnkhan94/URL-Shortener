@@ -48,6 +48,31 @@ module.exports = function (express) {
     })
   });
 
+  // Update URL Based by ID
+
+  router.post("/urls/:id", (req, res) => {
+    req.body.id = req.params.id;
+    url.update(req.body, (err) => {
+      utility.debug('Unable to update Shortened URL', "error");
+      res.status(500).json(err);
+    }, (data) => {
+      utility.debug('Successfully updated Shortened URL', "success");
+      res.status(200).json(data);
+    })
+  });
+
+  // Delete URL Based On ID
+
+  router.delete("/urls/:id", (req, res) => {
+    req.body.id = req.params.id;
+    url.destroy(req.body, (err) => {
+      utility.debug('Unable to delete Shortened URL', "error");
+      res.status(500).json(err);
+    }, (data) => {
+      utility.debug('Successfully deleted Shortened URL', "success");
+      res.status(200).json(data);
+    })
+  });
 
   return router;
 
