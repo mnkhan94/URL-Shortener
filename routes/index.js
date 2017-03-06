@@ -17,7 +17,7 @@ module.exports = function (express) {
 				GET: {
 					"/": "Will take you to the Welcome Screen",
 					"/go/:shortUrl": "Will redirect you to the Original Url",
-					"/api/v1/url": "Returns back all URLs in database'"
+					"/api/v1/urls": "Returns back all URLs in database'"
 				},
 				POST: {
 					"/api/v1/url": "Saves a new shortened url like 'short.io/v97fhg'",
