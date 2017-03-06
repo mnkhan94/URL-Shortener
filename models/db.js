@@ -20,3 +20,14 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
   // Prevent overloading the database
   logging: false,
 });
+
+// Have Sequelize Create The Table
+const url = sequelize.define("url", {
+  original_url: {
+    type: Sequelize.STRING,
+  },
+  short_url: {
+    type: Sequelize.STRING,
+  }
+});
+
