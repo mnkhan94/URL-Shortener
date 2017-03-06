@@ -20,7 +20,7 @@ module.exports = function (express) {
 					"/api/v1/url": "Returns back all URLs in database'"
 				},
 				POST: {
-					"/api/v1/url": "Saves a new url like short.io/v97fhg'",
+					"/api/v1/url": "Saves a new shortened url like 'short.io/v97fhg'",
 					"/api/v1/url/:id": "Finds & Updates the specified shortened Url"
 				},
 				DELETE: {
@@ -30,6 +30,22 @@ module.exports = function (express) {
 		);
 
 	});
+
+
+	router.get("/go/:shortURL", (req, res) => {
+		req.body.short_url = req.params.shortURL;
+		url.findShortURL(req.body, (err) => {
+			utility.debug('URL not found!', "error");		  
+			res.status(500).json(err);
+		}, (data) => {
+			utility.debug('Redirecting to ' + "http://www." + data.original_url, "success");
+			res.redirect("http://www." + data.original_url);
+		})
+	});
+
+	// Import API Routes
+	router.use("/api/v1", require("./api/url.js")(express));
+
 
 	// Return The Built Router
 	return router;
