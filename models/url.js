@@ -39,3 +39,26 @@ exports.findShortURL = (payload, err, success) => {
     }]
   }).then(success).catch(err);
 };
+
+
+/* ~ UPDATE ~ */
+
+exports.update = (payload, err, success) => {
+  db.url.find({
+    where: {
+      id: payload.id,
+    }
+  }).then((existingData) => {
+    existingData.updateAttributes(payload).then(success).catch(err);
+  }).catch(err);
+};
+
+/* ~ Delete ~ */
+exports.destroy = (payload, err, success) => {
+  db.url.destroy({
+    where: {
+      id: payload.id,
+    }
+  }).then(success).catch(err);
+};
+
