@@ -26,3 +26,16 @@ exports.findID = (payload, err, success) => {
     }]
   }).then(success).catch(err);
 };
+
+/* READ  */
+exports.findShortURL = (payload, err, success) => {
+  db.url.find({
+    where: {
+      short_url: payload.short_url,
+    },
+    include: [{
+      all: true,
+      nested: true,
+    }]
+  }).then(success).catch(err);
+};
