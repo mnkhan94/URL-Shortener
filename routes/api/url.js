@@ -28,10 +28,8 @@ module.exports = function (express) {
   // READ / Get all Shortened URLS
   router.get("/urls", (req, res) => {
     url.findAll((err) => {
-      utility.debug('Unable to get all Shortened URLs', "error");
       res.status(500).json(err);
     }, (data) => {
-      utility.debug('Successfully retrieved all Shortened URLs', "success");
       res.status(200).json(data);
     })
   });
@@ -40,10 +38,8 @@ module.exports = function (express) {
   router.get("/urls/:id", (req, res) => {
     req.body.id = req.params.id;
     url.findID(req.body, (err) => {
-      utility.debug('Unable to find Shortened URL', "error");
       res.status(500).json(err);
     }, (data) => {
-      utility.debug('Successfully updated Shortened URL', "success");
       res.status(200).json(data);
     })
   });
@@ -53,10 +49,8 @@ module.exports = function (express) {
   router.post("/urls/:id", (req, res) => {
     req.body.id = req.params.id;
     url.update(req.body, (err) => {
-      utility.debug('Unable to update Shortened URL', "error");
       res.status(500).json(err);
     }, (data) => {
-      utility.debug('Successfully updated Shortened URL', "success");
       res.status(200).json(data);
     })
   });
@@ -66,10 +60,8 @@ module.exports = function (express) {
   router.delete("/urls/:id", (req, res) => {
     req.body.id = req.params.id;
     url.destroy(req.body, (err) => {
-      utility.debug('Unable to delete Shortened URL', "error");
       res.status(500).json(err);
     }, (data) => {
-      utility.debug('Successfully deleted Shortened URL', "success");
       res.status(200).json(data);
     })
   });
