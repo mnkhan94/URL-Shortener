@@ -23,4 +23,4 @@ Step 4. Finally, run `node ./src/server.js` to run **short.io**
 
 Using Postman or alternative:
 
-post to `/api/v1/url` => Returns a shortened url like short.io/AppleMonkey
+post to `/api/v1/url` => Returns a shortened url like short.io/f5hye
