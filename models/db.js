@@ -31,3 +31,8 @@ const url = sequelize.define("url", {
   }
 });
 
+// Reach out to the database and sync the changes.
+sequelize.sync();
+
+exports.sequelize = sequelize;
+exports.url = url;
