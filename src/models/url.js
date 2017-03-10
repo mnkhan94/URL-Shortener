@@ -10,8 +10,10 @@ const utility = require('../lib/debug');
 
 /* ~ CREATE ~ */
 exports.create = (payload, err, success) => {
-	db.url.create(payload).then(success).catch(err);
 
+  utility.debug("Creating A Shortened Url");
+
+	db.url.create(payload).then(success).catch(err);
 };
 
 /* ~ READ ~ */
@@ -21,6 +23,9 @@ exports.findAll = (err, success) => {
 
 /* ~ READ Shortened Url by ID ~ */
 exports.findID = (payload, err, success) => {
+
+  utility.debug("Fetching all Shortened Urls");
+
   db.url.find({
     where: {
       id: payload.id,
@@ -34,6 +39,9 @@ exports.findID = (payload, err, success) => {
 
 /* READ  */
 exports.findShortURL = (payload, err, success) => {
+  
+  utility.debug("Finding A Shortened Url By ID");
+
   db.url.find({
     where: {
       short_url: payload.short_url,
@@ -49,6 +57,9 @@ exports.findShortURL = (payload, err, success) => {
 /* ~ UPDATE ~ */
 
 exports.update = (payload, err, success) => {
+
+  utility.debug("Updating A Shortened Url By ID");
+
   db.url.find({
     where: {
       id: payload.id,
@@ -60,6 +71,9 @@ exports.update = (payload, err, success) => {
 
 /* ~ Delete ~ */
 exports.destroy = (payload, err, success) => {
+
+  utility.debug("Destroying A Shortened Url By ID");
+
   db.url.destroy({
     where: {
       id: payload.id,
