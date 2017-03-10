@@ -1,4 +1,5 @@
 const url = require("../../models/url");
+const utility = require('../../lib/debug');
 
 // Export Express From Index.js
 
@@ -18,8 +19,13 @@ module.exports = function (express) {
     req.body.short_url = url_short;
     
     url.create(req.body, (err) => {
+      // Output Error in Log
+      utility.debug(err, "error");
       res.status(500).json(err);
     }, (data) => {
+      utility.debug(data, "success");
+      // Output Recieved Data in Log
+      utility.debug("The shortcut ["+ data.short_url +"] now redirects to the website [" + data.original_url + "]", "success");
       res.status(200).json(data);
     });
   });
@@ -38,8 +44,10 @@ module.exports = function (express) {
   router.get("/urls/:id", (req, res) => {
     req.body.id = req.params.id;
     url.findID(req.body, (err) => {
+      utility.debug(err, "error");
       res.status(500).json(err);
     }, (data) => {
+      utility.debug("["+ data.short_url +"] redirects to the website [" + data.original_url + "]", "success");
       res.status(200).json(data);
     })
   });
