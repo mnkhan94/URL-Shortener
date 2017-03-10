@@ -47,6 +47,7 @@ module.exports = function (express) {
       utility.debug(err, "error");
       res.status(500).json(err);
     }, (data) => {
+      // Log the response of the GET
       utility.debug("["+ data.short_url +"] redirects to the website [" + data.original_url + "]", "success");
       res.status(200).json(data);
     })
@@ -59,6 +60,8 @@ module.exports = function (express) {
     url.update(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
+      // Log the response of the POST
+      utility.debug("["+ data.short_url +"] has been updated to redirect to the website [" + data.original_url + "] now", "success");
       res.status(200).json(data);
     })
   });
@@ -70,6 +73,8 @@ module.exports = function (express) {
     url.destroy(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
+      // Log the response of the DELETE
+      utility.debug("The shortened url has been deleted and will no longer redirect to any website", "success");
       res.status(200).json(data);
     })
   });

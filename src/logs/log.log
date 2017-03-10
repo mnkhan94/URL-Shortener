@@ -1,1 +1,10 @@
 // Placeholder Log File
+[2017-03-10T02:46:22.486Z] The Server is running on port 3000
+[2017-03-10T02:46:46.872Z] TypeError: Cannot read property 'short_url' of null
+[2017-03-10T02:46:50.350Z] [3jI1cr] redirects to the website [youtube.com]
+[2017-03-10T02:46:56.372Z] TypeError: Cannot read property 'short_url' of null
+[2017-03-10T02:48:04.957Z] The Server is running on port 3000
+[2017-03-10T02:48:08.431Z] The short url [undefined] has been deleted and will no longer redirect to the website [undefined] now
+[2017-03-10T02:49:09.983Z] The Server is running on port 3000
+[2017-03-10T02:51:14.443Z] The Server is running on port 3000
+[2017-03-10T02:51:18.826Z] The short url has been deleted and will no longer redirect to any website
