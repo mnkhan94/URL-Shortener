@@ -5,7 +5,7 @@
 const db = require("./db");
 
 // Requrie the utility
-const utility = require('../../lib/debug');
+const utility = require('../lib/debug');
 
 
 /* ~ CREATE ~ */
