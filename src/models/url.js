@@ -4,9 +4,14 @@
 // Require the DB as a dependency
 const db = require("./db");
 
+// Requrie the utility
+const utility = require('../lib/debug');
+
+
 /* ~ CREATE ~ */
 exports.create = (payload, err, success) => {
 	db.url.create(payload).then(success).catch(err);
+
 };
 
 /* ~ READ ~ */

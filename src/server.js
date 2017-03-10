@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 // Create an app using Express
 const app = express();
 
+const utility = require('./lib/debug');
+
 // Config the localhost port location
 const port = 3000;
 
@@ -14,7 +16,7 @@ app.use(bodyParser.json());
 
 // Start the server 
 const server = app.listen(port, function() {
-	  console.log('The Server is running on port ' + port, "success");
+	  utility.debug('The Server is running on port ' + port, "success");
 });
 
 // Get The Api Routes from specified folder 
