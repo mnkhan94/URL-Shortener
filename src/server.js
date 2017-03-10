@@ -18,7 +18,7 @@ const server = app.listen(port, function() {
 });
 
 // Get The Api Routes from specified folder 
-app.use("/", require("../routes")(express));
+app.use("/", require("./routes")(express));
 
 // Export Module
 module.exports = server;
