@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 // Create an app using Express
 const app = express();
 
+const utility = require('./lib/debug');
+
 // Config the localhost port location
 const port = 3000;
 
