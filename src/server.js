@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // Start the server 
 const server = app.listen(port, function() {
-	  utility.debug('The Server is running on port ' + port, "success");
+	  console.log('The Server is running on port ' + port, "success");
 });
 
 // Get The Api Routes from specified folder 
