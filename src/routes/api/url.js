@@ -13,8 +13,7 @@ module.exports = (express) => {
   // CREATE A Shortened URL
   router.post('/url', (req, res) => {
   // Create an Alphanumeric String
-    let urlShort = '';
-    urlShort = randomstring.generate(6);
+    const urlShort = randomstring.generate(6);
     const request = req;
     request.body.short_url = urlShort;
     url.create(req.body, (err) => {
