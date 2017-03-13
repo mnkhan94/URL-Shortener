@@ -27,10 +27,8 @@ module.exports = (express) => {
         DELETE: {
           '/api/v1/url/:id': 'Finds & Deletes the specified shortened Url',
         },
-      },
-    );
+      });
   });
-
 
   router.get('/go/:shortURL', (req, res) => {
     const request = req;
