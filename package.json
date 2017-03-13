@@ -30,5 +30,12 @@
     "mysql": "^2.13.0",
     "randomstring": "^1.1.5",
     "sequelize": "^3.30.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0"
   }
 }

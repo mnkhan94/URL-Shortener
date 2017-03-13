@@ -1,10 +1,10 @@
-// This is the DB Model. 
+// This is the DB Model.
 // We'll use Sequelize to connect to the database.
 
 // Dependencies
 
-const Sequelize = require("sequelize");
-require("dotenv").config();
+const Sequelize = require('sequelize');
+require('dotenv').config();
 
 // Use Sequelize To Connect To Database
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
@@ -22,13 +22,13 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 
 // Have Sequelize Create The Table
-const url = sequelize.define("url", {
+const url = sequelize.define('url', {
   original_url: {
     type: Sequelize.STRING,
   },
   short_url: {
     type: Sequelize.STRING,
-  }
+  },
 });
 
 // Reach out to the database and sync the changes.

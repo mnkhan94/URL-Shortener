@@ -1,8 +1,8 @@
-// This is the URL Model. 
+// This is the URL Model.
 // The CRUD functionalities of the Shortened Urls will live in here
 
 // Require the DB as a dependency
-const db = require("./db");
+const db = require('./db');
 
 // Requrie the utility
 const utility = require('../lib/debug');
@@ -10,21 +10,19 @@ const utility = require('../lib/debug');
 
 /* ~ CREATE ~ */
 exports.create = (payload, err, success) => {
+  utility.debug('Creating A Shortened Url');
 
-  utility.debug("Creating A Shortened Url");
-
-	db.url.create(payload).then(success).catch(err);
+  db.url.create(payload).then(success).catch(err);
 };
 
 /* ~ READ ~ */
 exports.findAll = (err, success) => {
-  	db.url.findAll().then(success).catch(err);
+  db.url.findAll().then(success).catch(err);
 };
 
 /* ~ READ Shortened Url by ID ~ */
 exports.findID = (payload, err, success) => {
-
-  utility.debug("Fetching all Shortened Urls");
+  utility.debug('Fetching all Shortened Urls');
 
   db.url.find({
     where: {
@@ -33,14 +31,13 @@ exports.findID = (payload, err, success) => {
     include: [{
       all: true,
       nested: true,
-    }]
+    }],
   }).then(success).catch(err);
 };
 
 /* READ  */
 exports.findShortURL = (payload, err, success) => {
-  
-  utility.debug("Finding A Shortened Url By ID");
+  utility.debug('Finding A Shortened Url By ID');
 
   db.url.find({
     where: {
@@ -49,21 +46,19 @@ exports.findShortURL = (payload, err, success) => {
     include: [{
       all: true,
       nested: true,
-    }]
+    }],
   }).then(success).catch(err);
 };
 
 
 /* ~ UPDATE ~ */
-
 exports.update = (payload, err, success) => {
-
-  utility.debug("Updating A Shortened Url By ID");
+  utility.debug('Updating A Shortened Url By ID');
 
   db.url.find({
     where: {
       id: payload.id,
-    }
+    },
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
@@ -71,13 +66,11 @@ exports.update = (payload, err, success) => {
 
 /* ~ Delete ~ */
 exports.destroy = (payload, err, success) => {
-
-  utility.debug("Destroying A Shortened Url By ID");
+  utility.debug('Destroying A Shortened Url By ID');
 
   db.url.destroy({
     where: {
       id: payload.id,
-    }
+    },
   }).then(success).catch(err);
 };
-
