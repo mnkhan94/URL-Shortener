@@ -7,6 +7,7 @@ const should = chai.should();
 describe('CRUD Routes', () => {
   beforeEach(() => {
     server = require('../src/server.js');
+    let dummy = 0
   });
 
   afterEach(() => {
@@ -53,12 +54,23 @@ describe('CRUD Routes', () => {
       .send(newUrl)
       .expect((res) => {
         const url = res.body;
+        dummy = url.id;
         expect(url).to.have.property('id');
         expect(url).to.have.property('original_url');
         expect(url).to.have.property('short_url');
       })
       .end((err, res) => {
         res.status.should.be.equal(200);
+        done();
+      });
+  });
+
+  it('should DELETE url to /api/v1/url/ return a the object deleted.', (done) => {
+    request(server)
+      .delete('/api/v1/urls/' + dummy)
+      .end((err, res) => {
+        res.status.should.be.equal(200);
+        res.body.should.be.equal(1);
         done();
       });
   });
