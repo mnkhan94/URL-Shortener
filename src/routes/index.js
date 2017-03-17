@@ -27,8 +27,7 @@ module.exports = (express) => {
         DELETE: {
           '/api/v1/url/:id': 'Finds & Deletes the specified shortened Url',
         },
-      },
-    );
+      });
   });
 
 
