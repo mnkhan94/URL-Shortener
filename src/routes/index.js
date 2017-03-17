@@ -3,7 +3,7 @@
 
 // Import URLs model
 const url = require('../models/url');
-const utility = require('../lib/debug');
+const utility = require('utility-tool-mnkhan');
 
 // Export this module, so that server.js can import it
 module.exports = (express) => {
