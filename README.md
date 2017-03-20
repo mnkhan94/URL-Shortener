@@ -43,17 +43,6 @@ delete to `/api/v1/url/:id` => Finds & Deletes the specified shortened Url
 
 ## Debugging
 
-Turn Debugging mode on by setting DEBUG to true in your .env
+We use the fantastic 'utility-tool-mnkhan' npm package to debug. 
+For more info, check out their repo here: [utility-tool-mnkhan](https://github.com/mnkhan94/utility-tool)
 
-:. Logging to src/logs/log.txt WITH highlighted console logs.
-
-```javascript
-DEBUG=true node src/server.js
-```
-Turn Debugging mode off by setting DEBUG to false in your .env
-
-:. Logging to src/logs/log.txt WITHOUT console logs.
-
-```javascript
-DEBUG=false node src/server.js
-```
