@@ -46,3 +46,11 @@ delete to `/api/v1/url/:id` => Finds & Deletes the specified shortened Url
 We use the fantastic 'utility-tool-mnkhan' npm package to debug. 
 For more info, check out their repo here: [utility-tool-mnkhan](https://github.com/mnkhan94/utility-tool)
 
+## Deployment
+
+Requried: pm2 package and nginx on an ubuntu environment.
+
+1. Host your production environment on a server.
+2. Create another bare git repository in a seperate directory on your servers home directory which will serve to manage git hook functions
+2. Use git hooks to tell your production environment to update the code, install any new packages, and restart the node application whenever anything new is recieved.
+3. In the terminal enter `git push production master` to deploy to production environment
