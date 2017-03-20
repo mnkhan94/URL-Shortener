@@ -5,8 +5,7 @@
 const db = require('./db');
 
 // Requrie the utility
-const utility = require('../lib/debug');
-
+const utility = require('utility-tool-mnkhan');
 
 /* ~ CREATE ~ */
 exports.create = (payload, err, success) => {
