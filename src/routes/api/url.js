@@ -1,5 +1,5 @@
 const url = require('../../models/url');
-const utility = require('../../lib/debug');
+const utility = require('utility-tool-mnkhan');
 
 // Export Express From Index.js
 
