@@ -14,7 +14,7 @@ module.exports = (express) => {
   router.get('/', (req, res) => {
     res.json(
       {
-        Hi: 'Welcome to the short.io URL-Shortener [TESTING GIT HOOKS?!?.. FINALLY?]',
+        Hi: 'Welcome to the short.io URL-Shortener [TESTING GIT HOOKS?!?.. FINALLY?!..?]',
         GET: {
           '/': 'Will take you to the Welcome Screen',
           '/go/:shortUrl': 'Will redirect you to the Original Url',
