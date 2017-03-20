@@ -4,7 +4,7 @@
   "description": "A URL Shortener made for Full Sail's March Web Deployment Class",
   "main": "src/server.js",
   "scripts": {
-    "test": "istanbul cover _mocha -- -u exports -R spec",
+    "test": "istanbul cover _mocha",
     "start": "npm install && node src/server.js"
   },
   "repository": {
