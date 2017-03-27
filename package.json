@@ -4,7 +4,8 @@
   "description": "A URL Shortener made for Full Sail's March Web Deployment Class",
   "main": "src/server.js",
   "scripts": {
-    "test": "istanbul cover _mocha -- -u exports -R spec",
+    "test": "istanbul cover _mocha",
+    "test-cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "start": "npm install && node src/server.js"
   },
   "repository": {
@@ -30,7 +31,8 @@
     "log-timestamp": "^0.1.2",
     "mysql": "^2.13.0",
     "randomstring": "^1.1.5",
-    "sequelize": "^3.30.2"
+    "sequelize": "^3.30.2",
+    "utility-tool-mnkhan": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
