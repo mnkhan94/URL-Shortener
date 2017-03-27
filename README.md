@@ -26,8 +26,11 @@ Step 5. Finally, run `node ./src/server.js` to run **short.io**
 ### GET
 
 get `/` => Will take you to the Welcome Screen
+
 get `/go/:shortUrl` => Will redirect you to the Original Url
+
 get `/api/v1/urls` => Returns back all URLs in database
+
 get `/api/v1/urls/:id` => Finds and Gets the specific URL by ID in database
 
 ### POST
